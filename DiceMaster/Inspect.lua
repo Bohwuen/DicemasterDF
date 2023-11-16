@@ -86,7 +86,7 @@ local function PrimeInspectData( name )
 		experience    = 0;
 		pet	= {
 			enable  = false;
-			name 	= "Pet Name";
+			name 	= "Nombre de mascota";
 			type    = "Pet";
 			icon 	= "Interface/Icons/inv_misc_questionmark";
 			model 	= 31;

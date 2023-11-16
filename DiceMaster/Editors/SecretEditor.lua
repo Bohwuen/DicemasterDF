@@ -283,7 +283,7 @@ function Me.SecretEditorCondition_OnLoad(frame, level, menuList)
 			info.keepShownOnClick = true;
 			info.tooltipTitle = skillsList[menuList][i].name;
 			if skillsList[menuList][i].desc and skillsList[menuList][i].skillModifier then
-				info.tooltipText = skillsList[menuList][i].desc .. "|n|cFF707070(Modified by "..skillsList[menuList][i].skillModifier.." + "..info.text..")|r";
+				info.tooltipText = skillsList[menuList][i].desc .. "|n|cFF707070(Modificado por "..skillsList[menuList][i].skillModifier.." + "..info.text..")|r";
 			elseif skillsList[menuList][i].desc then
 				info.tooltipText = skillsList[menuList][i].desc;
 			end
@@ -291,7 +291,7 @@ function Me.SecretEditorCondition_OnLoad(frame, level, menuList)
 			for i = 1, #Profile.skills do
 				if Profile.skills[i].name == info.text then
 					if Profile.skills[i].skillModifier and Profile.skills[i].desc then
-						info.tooltipText = Profile.skills[i].desc .. "|n|cFF707070(Modified by " .. Profile.skills[i].skillModifier .. ")|r";
+						info.tooltipText = Profile.skills[i].desc .. "|n|cFF707070(Modificado por " .. Profile.skills[i].skillModifier .. ")|r";
 					end
 					break
 				end

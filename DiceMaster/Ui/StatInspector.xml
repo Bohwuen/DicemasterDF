@@ -74,7 +74,7 @@
 							GameTooltip:AddLine( self.expandedDescription, 1, 0.81, 0, true )
 						else
 							GameTooltip:AddLine( self.skillDescription, 1, 0.81, 0, true )
-							GameTooltip:AddLine( "&lt;Hold Shift for Details>", 0.5, 0.5, 0.5, true )
+							GameTooltip:AddLine( "&lt;Mantén Shift para mostrar detalles.>", 0.5, 0.5, 0.5, true )
 						end
 						GameTooltip:AddLine( "&lt;Left Click to Select>", 0.5, 0.5, 0.5, true )
 						DiceMasterTooltipIcon.icon:SetTexture( self.skillIcon )
@@ -207,7 +207,7 @@
 		</OnLoad>
 		<OnEnter>
 			GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-			GameTooltip:AddLine( "Inspect", 1, 1, 1 )
+			GameTooltip:AddLine( "Inspeccionar", 1, 1, 1 )
 			GameTooltip:Show()
 		</OnEnter>
 		<OnLeave>
@@ -689,7 +689,7 @@
 				<Scripts>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-						GameTooltip:AddLine("Pet Item");
+						GameTooltip:AddLine("Objeto de mascota");
 						GameTooltip:Show();
 					</OnEnter>
 					<OnLeave function="GameTooltip_Hide"/>

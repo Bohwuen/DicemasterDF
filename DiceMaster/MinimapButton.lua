@@ -67,8 +67,8 @@ function Me.MinimapButton:OnEnter( frame )
 	GameTooltip:ClearLines()
 	GameTooltip:AddDoubleLine( "DiceMaster", Me.version, 1, 1, 1, 1, 1, 1 )
 	GameTooltip:AddLine( " " )
-	GameTooltip:AddLine( "|cff00ff00Left-click|r to toggle panel.", 1, 1, 1 )
-	GameTooltip:AddLine( "|cff00ff00Right-click|r for configuration.", 1, 1, 1 )
+	GameTooltip:AddLine( "|cff00ff00Click izquierdo|r activar/desactivar panel.", 1, 1, 1 )
+	GameTooltip:AddLine( "|cff00ff00Click derecho|r para abrir la configuración.", 1, 1, 1 )
 	GameTooltip:Show()
 end
 

@@ -59,21 +59,21 @@ local DB_DEFAULTS = {
 	profile = {
 		charges = {
 			enable  = false;
-			name    = "Custom Resource";
+			name    = "Recurso personalizado";
 			color   = {1,1,1};
 			count   = 0;
 			max     = 3;
-			tooltip = "Represents the amount of Custom Resource you have accumulated for certain traits.";
+			tooltip = "Representa la cantidad de recursos personalizados del personaje para emplear en rasgos.";
 			symbol	= "charge-orb";
 			flash   = true;
 			pos		= false;
 		};
 		morale = {
 			enable  = false;
-			name    = "Progress Bar";
+			name    = "Barra de progreso";
 			count   = 100;
 			step    = 5;
-			tooltip = "A custom group-wide resource bar that leaders can edit.";
+			tooltip = "Una barra de progreso personalizada que se muestra al grupo.";
 			color   = {1,1,0};
 			symbol  = "WoWUI";
 			scale   = 0.75;
@@ -87,7 +87,7 @@ local DB_DEFAULTS = {
 		traits       = {};
 		pet	= {
 			enable  = false;
-			name 	= "Pet Name";
+			name 	= "Nombre de Mascota";
 			type    = "Pet";
 			icon 	= "Interface/Icons/inv_misc_questionmark";
 			model 	= 0;
@@ -96,7 +96,7 @@ local DB_DEFAULTS = {
 			healthMax    = 5;
 			armor        = 0;
 			happiness	 = 3;
-			foodTypes 	 = { "Meat", "Fish", "Fruit", "Fungus", "Bread", "Cheese" };
+			foodTypes 	 = { "Carne", "Pescado", "Fruta", "Hongos", "Pan", "Queso" };
 		};
 		inventory	 = {};
 		inventoryIcon = "Interface/Buttons/Button-Backpack-Up";
@@ -116,7 +116,7 @@ local DB_DEFAULTS = {
 		currencyActive = 1;
 		recipes			 = {};
 		skills			 = {};
-		alignment		 = "(None)";
+		alignment		 = "(Ninguno)";
 		buffsActive  	 = {};
 		level        = 1;
 		experience   = 0;
@@ -129,16 +129,16 @@ local DB_DEFAULTS = {
 
 -- Initialize traits.
 do
-	local numbers = { "One", "Two", "Three", "Four", "Five" }
+	local numbers = { "Uno", "Dos", "Tres", "Cuatro", "Cinco" }
 	for i = 1, 5 do
 		 
 		DB_DEFAULTS.profile.traits[i] = {
-			name   = "Trait " .. numbers[i];                    -- name of trait
+			name   = "Rasgo " .. numbers[i];                    -- name of trait
 			usage  = Me.TRAIT_USAGE_MODES[1];                   -- usage, see USAGE_MODES
 			range  = Me.TRAIT_RANGE_MODES[1];                   -- usage, see RANGE_MODES
 			castTime = Me.TRAIT_CAST_TIME_MODES[1];				-- cast time, see CAST_TIME_MODES
 			cooldown = Me.TRAIT_COOLDOWN_MODES[1];				-- cooldown time, see COOLDOWN_MODES
-			desc   = "Type a description for your trait here."; -- trait description
+			desc   = "Escribe la descripción del Rasgo aqui."; -- trait description
 			approved = false;									-- trait approved
 			officers = {};										-- approved by
 			icon   = "Interface/Icons/inv_misc_questionmark";   -- trait icon texture path
@@ -164,14 +164,14 @@ Me.configOptions = {
 		-----------------------------------------------------------------------
 		header = {
 			order = 0;
-			name  = "Configure the core settings for DiceMaster.";
+			name  = "Configurar las características de Dicemaster.";
 			type  = "description";
 		};
 		
 		mmicon = {
 			order = 1;
-			name  = "Enable Minimap Icon";
-			desc  = "Enable the DiceMaster minimap icon.";
+			name  = "Habilitar botón de minimapa";
+			desc  = "Habilitar botón de minimapa.";
 			type  = "toggle";
 			set   = function( info, val ) Me.MinimapButton:Show( val ) end;
 			get   = function( info ) return not Me.db.char.minimapicon.hide end;
@@ -179,8 +179,8 @@ Me.configOptions = {
  
 		uiScale = {
 			order     = 4;
-			name      = "UI Scale";
-			desc      = "Change the size of the Dice Panel, Health and Resource bars, Target, and Progress Bar frames.";
+			name      = "Escala de interfaz";
+			desc      = "Cambiar el tamaño del panel de dados, las barras de salud y recurso, el objetivo y los marcos de la barra de progreso.";
 			type      = "range";
 			min       = 0.25;
 			max       = 10;
@@ -195,8 +195,8 @@ Me.configOptions = {
 		
 		showUses = {
 			order = 5;
-			name  = "Show Remaining Uses on Dice Panel";
-			desc  = "Show the number of remaining uses for traits on the Dice Panel.";
+			name  = "Muestra los usos restantes de los rasgos";
+			desc  = "Muestra los usos restantes d elos rasgos en el panel de dados.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -209,8 +209,8 @@ Me.configOptions = {
 		
 		resetUses = {
 			order = 6;
-			name  = "Reset Trait Uses";
-			desc  = "Reset the cooldown and number of remaining uses for traits on the Dice Panel.";
+			name  = "Reiniciar los usos de rasgos.";
+			desc  = "Reinicia el enfriamiento de los rasgos del panel de dados.";
 			type  = "execute";
 			hidden   = true;
 			width = "normal";
@@ -237,8 +237,8 @@ Me.configOptions = {
 		
 		hideInspect = {
 			order = 7;
-			name  = "Hide Target Frame When Hidden";
-			desc  = "Hide the Target Frame when the Dice Panel is hidden.";
+			name  = "Oculta el marco de inspección";
+			desc  = "Oculta el marco de inspección mientras DiceMaster esté oculto.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -251,8 +251,8 @@ Me.configOptions = {
 		
 		hideStats = {
 			order = 8;
-			name  = "Hide Inspect Button on Target Frame";
-			desc  = "Hide the Inspect button from the Target Frame.";
+			name  = "Ocultar botón de inspección";
+			desc  = "Ocultar Botón de inspección mientras DiceMaster está oculto.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -265,8 +265,8 @@ Me.configOptions = {
 		
 		hidePet = {
 			order = 9;
-			name  = "Hide Pet Frame on Target Frame";
-			desc  = "Hide the Pet Portrait Frame from the Target Frame.";
+			name  = "Ocultar marco de mascota del objetivo";
+			desc  = "Ocultar marco de mascota del objetivo mientras DiceMaster está oculto.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -279,8 +279,8 @@ Me.configOptions = {
 		
 		hideTips = {
 			order = 10;
-			name  = "Enable Enhanced Tooltips";
-			desc  = "Enable helpful DiceMaster term definitions next to trait tooltips.";
+			name  = "Mejorar Tooltip";
+			desc  = "Habilitar definiciones útiles de términos de DiceMaster junto a las descripciones de rasgos.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -291,8 +291,8 @@ Me.configOptions = {
 		
 		hideTypeTracker = {
 			order = 11;
-			name  = "Enable Typing Tracker";
-			desc  = "Enable the Typing Tracker to alert you when group members are writing in say, emote, party, and raid.";
+			name  = "Activar seguimiento de escritura";
+			desc  = "Habilitar el Rastreador de Escritura para alertarte cuando los miembros del grupo están escribiendo en decir, acción, grupo y banda.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -304,8 +304,8 @@ Me.configOptions = {
 		
 		enableTurnTracker = {
 			order = 12;
-			name  = "Enable Combat Turn Tracker";
-			desc  = "Displays the Turn Tracker frame when turn-based combat begins.";
+			name  = "Activar seguimiento de turnos de combate";
+			desc  = "Muestra una ventana de seguimiento de turnos de combate cuando este empieza.";
 			width = "full";
 			type  = "toggle";
 			set = function( info, val ) 
@@ -319,8 +319,8 @@ Me.configOptions = {
 		
 		allowSounds = {
 			order = 13;
-			name  = "Allow Sounds from Other Players";
-			desc  = "Allow other players to play sound effects.";
+			name  = "Admitir sonidos de otros jugadores";
+			desc  = "Admite escuchar sonidos emitidos por otros jugadores.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -331,8 +331,8 @@ Me.configOptions = {
 		
 		allowEffects = {
 			order = 14;
-			name  = "Allow Effects from Other Players";
-			desc  = "Allow other players to send you fullscreen visual effects.";
+			name  = "Admitir efectos de otros jugadores";
+			desc  = "Admitir ver los efectos de pantalla de otros jugadores.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -343,8 +343,8 @@ Me.configOptions = {
 		
 		allowIcons = {
 			order = 15;
-			name  = "Display Icons in Chat";
-			desc  = "Display icons linked by players in public chat channels.";
+			name  = "Mostrar iconoes en el chat";
+			desc  = "Mostrar los iconos que los jugadores muestran en el chat público.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -355,8 +355,8 @@ Me.configOptions = {
 		
 		enableEmojis = {
 			order = 16;
-			name  = "Enable autocomplete for emojis.";
-			desc  = "Display an autocomplete field above your chat bar when you start typing an emoji.";
+			name  = "Activar autocompletado de emoji.";
+			desc  = "Muestra un campo de autocompletado sobre el chat quenco empiezas a escribir un emoji.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -367,8 +367,8 @@ Me.configOptions = {
 		
 		enableRoundBanners = {
 			order = 17;
-			name  = "Allow Roll Prompt Banners";
-			desc  = "Allow the group leader to send you visual prompts when it's your turn to roll.";
+			name  = "Admitir estandartes";
+			desc  = "Admitir que el lider del grupo te encia estandartes animados cuando sea tu turno.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -379,8 +379,8 @@ Me.configOptions = {
 		
 		enableMapNodes = {
 			order = 18;
-			name  = "Display Group Leader's Map Nodes";
-			desc  = "Display the group leader's map nodes when you're in a party or raid.";
+			name  = "Mostrar nodos de mapa de lider";
+			desc  = "Muetsra los nodos de mapa del lider cuando estás en grupo o banda.";
 			type  = "toggle";
 			width = "double";
 			set = function( info, val )
@@ -425,12 +425,12 @@ Me.configOptionsCharges = {
 		-----------------------------------------------------------------------
 		header = {
 			order = 0;
-			name  = "Configure the Health, Mana, and Resource Bars.";
+			name  = "Configura las barras de Salud, Maná o progreso.";
 			type  = "description";
 		};
 		
 		healthIcons = {
-			order = 1;
+			order = 10;
 			name  = "Use Hearthstone Style Meters Instead";
 			desc  = "Toggles whether to use the default health bar or the Hearthstone style health and mana meters.|n|n(The meters anchor to the PlayerFrame and TargetFrame by default.)";
 			width = "full";
@@ -446,15 +446,15 @@ Me.configOptionsCharges = {
 		};
 		
 		healthGroup = {
-			name     = "Health Bar";
+			name     = "Barra de salud";
 			inline   = true;
 			order    = 12;
 			type     = "group";
 			args = {
 				healthCurrent = {
 					order = 10;
-					name  = "Current Health";
-					desc  = "The current amount of health that this character has.";
+					name  = "Salud actual";
+					desc  = "La cantidad de número de puntos de salud que el personaje posee.";
 					type  = "range"; 
 					min   = 0;
 					max   = 1000;
@@ -471,8 +471,8 @@ Me.configOptionsCharges = {
 			  
 				healthMax = {
 					order = 20;
-					name  = "Maximum Health";
-					desc  = "The maximum amount of health that this character can have.";
+					name  = "Salud Máxima";
+					desc  = "La cantidad Máxima de salud que el personaje puede poseer.";
 					type  = "range"; 
 					min   = 1;
 					max   = 1000;
@@ -494,15 +494,15 @@ Me.configOptionsCharges = {
 		};
 		
 		manaGroup = {
-			name     = "Mana Bar";
+			name     = "Barra de maná";
 			inline   = true;
 			order    = 13;
 			type     = "group";
 			args = {
 				manaCurrent = {
 					order = 10;
-					name  = "Current Mana";
-					desc  = "The current amount of mana that this character has.";
+					name  = "Maná actual";
+					desc  = "La cantidad de maná actual que el personaje posee.";
 					type  = "range"; 
 					min   = 0;
 					max   = 1000;
@@ -519,8 +519,8 @@ Me.configOptionsCharges = {
 			  
 				manaMax = {
 					order = 20;
-					name  = "Maximum Mana";
-					desc  = "The maximum amount of mana that this character can have.";
+					name  = "Maná Máximo";
+					desc  = "La cantidad máxima de puntos de maná que el personaje puede poseer.";
 					type  = "range"; 
 					min   = 1;
 					max   = 1000;
@@ -541,22 +541,22 @@ Me.configOptionsCharges = {
 				
 				manaType = {
 					order = 70;
-					name  = "Resource Type";
-					desc  = "Choose the type of resource used by the mana bar.";
+					name  = "Tipo de recurso";
+					desc  = "Elige tipo de recurso.";
 					type  = "select"; 
 					style = "dropdown";
 					values = {
-						["Mana"] = "Mana",
-						["Energy"] = "Energy",
-						["Focus"] = "Focus",
-						["Rage"] = "Rage",
-						["RunicPower"] = "Runic Power",
-						["None"] = "(None)",
+						["Mana"] = "Maná",
+						["Energy"] = "Energía",
+						["Focus"] = "Foco",
+						["Rage"] = "Ira",
+						["RunicPower"] = "Poder Rúnico",
+						["None"] = "(Ninguno)",
 					};
 					set   = function( info, val ) 
 						Me.db.profile.manaType = val
 						local statusBarTexture = DiceMasterChargesFrame.manabar:GetStatusBarTexture();
-						if val:find("None") then
+						if val:find("Ninguno") then
 							-- statusBarTexture:SetAtlas( "UI-HUD-UnitFrame-Player-PortraitOff-Bar-" .. val );
 						else
 							statusBarTexture:SetAtlas( "UI-HUD-UnitFrame-Player-PortraitOff-Bar-" .. val );
@@ -570,8 +570,8 @@ Me.configOptionsCharges = {
 	
 		enableCharges = {
 			order = 14;
-			name  = "Enable Resource Bar";
-			desc  = "Enable usage of the custom resource bar.";
+			name  = "Activar barra de recurso";
+			desc  = "Activar el uso de la barra de recursos extra.";
 			width = "full";
 			type  = "toggle";
 			set = function( info, val ) 
@@ -583,7 +583,7 @@ Me.configOptionsCharges = {
 		};
 
 		chargesGroup = {
-			name     = "Resource Bar";
+			name     = "Barra de recurso";
 			inline   = true;
 			order    = 15;
 			type     = "group";
@@ -591,8 +591,8 @@ Me.configOptionsCharges = {
 			args = {
 				chargesName = {
 					order = 20;
-					name  = "Resource Name";
-					desc  = "Name of the custom resource. Examples: Holy Power, Rage, Adrenaline.";
+					name  = "Nombre del recurso";
+					desc  = "Nombra el recurso personalizado. Ejemplos: Poder sagrado, Ira, Adrenalina.";
 					type  = "input";
 					set = function( info, val ) 
 						Me.db.profile.charges.name = val
@@ -603,8 +603,8 @@ Me.configOptionsCharges = {
 				
 				chargesColor = {
 					order = 30;
-					name  = "Resource Color";
-					desc  = "Color of the custom resource bar.";
+					name  = "Color de recurso";
+					desc  = "Color de la barra de recurso.";
 					type  = "color";
 					set = function( info, r, g, b ) 
 						Me.db.profile.charges.color = {r,g,b}
@@ -619,8 +619,8 @@ Me.configOptionsCharges = {
 			  
 				chargesMax = {
 					order = 40;
-					name  = "Maximum Resource";
-					desc  = "The maximum possible amount for this custom resource.";
+					name  = "Recurso máximo";
+					desc  = "el número máximo de recurso personalizado obtenible.";
 					type  = "range"; 
 					hidden = false;
 					min   = 1;
@@ -635,8 +635,8 @@ Me.configOptionsCharges = {
 				
 				chargesMaxTwo = {
 					order = 50;
-					name  = "Maximum Resource";
-					desc  = "The maximum amount of resource that this character can accumulate.";
+					name  = "Recurso máximo";
+					desc  = "El número máximo de recursos que pueden ser acumulados.";
 					type  = "range";
 					hidden = true;
 					min   = 1;
@@ -654,8 +654,8 @@ Me.configOptionsCharges = {
 				
 				chargesTooltip = {
 					order = 60;
-					name  = "Resource Description";
-					desc  = "A description for the custom resource bar tooltip.";
+					name  = "Descripción de recurso";
+					desc  = "La descripción del recurso que se muestra en el marco.";
 					type  = "input";
 					width = "double";
 					multiline = 3;
@@ -668,67 +668,67 @@ Me.configOptionsCharges = {
 				
 				chargesSymbol = {
 					order = 70;
-					name  = "Resource Bar Skin";
-					desc  = "Custom skin for the custom resource bar.";
+					name  = "Apariencia de barra de recurso";
+					desc  = "La apariencia personalizada de la barra de recurso.";
 					type  = "select"; 
 					style = "dropdown";
 					values = {
-						["charge-orb"] = "Orbs",
-						["charge-fire"] = "Burning Embers",
-						["charge-rune"] = "Death Knight Runes",
-						["charge-shadow"] = "Shadow Orbs",
-						["charge-soulshards"] = "Soul Shards",
-						["charge-hourglass"] = "Hourglasses",
-						["Air"] = "Air",
-						["Ice"] = "Ice",
-						["Fire"] = "Fire",
-						["Rock"] = "Rock",
-						["Water"] = "Water",
-						["Meat"] = "Meat",
-						["UndeadMeat"] = "Undead Meat",
-						["WoWUI"] = "Generic",
-						["WoodPlank"] = "Wood Plank",
-						["WoodWithMetal"] = "Wood with Metal",
-						["Darkmoon"] = "Darkmoon",
-						["MoltenRock"] = "Molten Rock",
-						["Alliance"] = "Alliance",
-						["Horde"] = "Horde",
-						["Amber"] = "Amber",
-						["Druid"] = "Druid",
-						["FancyPanda"] = "Fancy Pandaren",
-						["Mechanical"] = "Mechanical",
-						["LightningCharges"] = "Lightning",
-						["Map"] = "Map",
-						["InquisitionTorment"] = "Inquisitor",
-						["Bamboo"] = "Bamboo",
+						["charge-orb"] = "Orbes",
+						["charge-fire"] = "Ascuas ardientes",
+						["charge-rune"] = "Runas de Caballero de la muerte",
+						["charge-shadow"] = "Runas de sombra",
+						["charge-soulshards"] = "Fragmentos de alma",
+						["charge-hourglass"] = "Relojes de arena",
+						["Air"] = "Aire",
+						["Ice"] = "Hielo",
+						["Fire"] = "Fuego",
+						["Rock"] = "Roca",
+						["Water"] = "Agua",
+						["Meat"] = "Carne",
+						["UndeadMeat"] = "Carne podrida",
+						["WoWUI"] = "Genérico",
+						["WoodPlank"] = "Tabla de madera",
+						["WoodWithMetal"] = "Madera con metal",
+						["Darkmoon"] = "Luna negra",
+						["MoltenRock"] = "Roca fundida",
+						["Alliance"] = "Alianza",
+						["Horde"] = "Horda",
+						["Amber"] = "Ámbar",
+						["Druid"] = "Druida",
+						["FancyPanda"] = "Pandaren",
+						["Mechanical"] = "Mechanico",
+						["LightningCharges"] = "Relámpago",
+						["Map"] = "Mapa",
+						["InquisitionTorment"] = "Inquisidor",
+						["Bamboo"] = "Bambú",
 						["Onyxia"] = "Onyxia",
-						["StoneDesign"] = "Stone Design",
+						["StoneDesign"] = "Diseño en piedra",
 						["NaaruCharge"] = "Naaru",
-						["ShadowPaladinBar"] = "Shadow Paladin",
-						["Xavius"] = "Xavius Nightmare",
-						["BulletBar"] = "Bullets",
-						["Azerite"] = "Azerite",
+						["ShadowPaladinBar"] = "Paladin Oscuro",
+						["Xavius"] = "Pesadilla de Xavius",
+						["BulletBar"] = "Balas",
+						["Azerite"] = "Azerita",
 						["Chogall"] = "Cho'gall",
-						["FuelGauge"] = "Fuel Gauge",
-						["FelCorruption"] = "Fel Corruption",
-						["Murozond"] = "Murozond Hourglass",
-						["Pride"] = "Pride",
+						["FuelGauge"] = "Contenedor de Fuel",
+						["FelCorruption"] = "Corrupción Vil",
+						["Murozond"] = "Reloj de arena de Murozond",
+						["Pride"] = "Orgullo",
 						["Rhyolith"] = "Rhyolith",
-						["KargathRoarCrowd"] = "Ogre",
-						["Meditation"] = "Meditation",
+						["KargathRoarCrowd"] = "Ogro",
+						["Meditation"] = "Meditación",
 						["Jaina"] = "Jaina",
 						["NZoth"] = "N'zoth",
-						["sanctum-bar"] = "Arcane Sanctum",
-						["warden-bar"] = "Warden",
+						["sanctum-bar"] = "Santuario Arcano",
+						["warden-bar"] = "Guardián",
 						["RevendrethAnima"] = "Revendreth",
 						["BastionAnima"] = "Bastion",
 						["MaldraxxusAnima"] = "Maldraxxus",
 						["ArdenwealdAnima"] = "Ardenweald",
-						["archer-bar"] = "Archer",
-						["phoenix-bar"] = "Phoenix",
-						["mana-gems-bar"] = "Mana Gems",
-						["holy-power-bar"] = "Holy Power",
-						["balance-bar"] = "Balance",
+						["archer-bar"] = "Arquero",
+						["phoenix-bar"] = "Fénix",
+						["mana-gems-bar"] = "Gemas de maná",
+						["holy-power-bar"] = "Poder Sagrado",
+						["balance-bar"] = "Equilibrio",
 					};
 					set   = function( info, val ) 
 						Me.db.profile.charges.symbol = val
@@ -753,8 +753,8 @@ Me.configOptionsCharges = {
 				
 				chargesFlash = {
 					order = 80;
-					name  = "Flash When Resource Bar is Full";
-					desc  = "Toggle whether the custom resource bar flashes when filled.";
+					name  = "Hacer que la barra brille cuando está llena";
+					desc  = "Cuando se activa hacer que cuando la barra de recurso se llene brille.";
 					width = "full";
 					type  = "toggle";
 					set = function( info, val ) 
@@ -766,8 +766,8 @@ Me.configOptionsCharges = {
 				
 				chargesPos = {
 					order = 90;
-					name  = "Anchor Below Health Bar";
-					desc  = "Move your custom resource bar so that it's positioned beneath your health bar.";
+					name  = "Anclar bajo la barra de salud";
+					desc  = "Mueve la barra de recursos bajo la barra de salud..";
 					width = "full";
 					type  = "toggle";
 					set = function( info, val ) 
@@ -788,14 +788,14 @@ Me.configOptionsProgressBar = {
 		-----------------------------------------------------------------------
 		header = {
 			order = 0;
-			name  = "Configure the Progress Bar frame.";
+			name  = "Configurar el marco de barra de progreso.";
 			type  = "description";
 		};
 		
 		enableMorale = {
 			order = 15;
-			name  = "Enable Progress Bar";
-			desc  = "Enable usage of a group-wide progress bar when you are leader.";
+			name  = "Activar barra de progreso";
+			desc  = "Activar la barra de progreso en grupo cuando el lider del grupo la active.";
 			width = "full";
 			type  = "toggle";
 			set = function( info, val ) 
@@ -1068,16 +1068,16 @@ function Me.SetupDB()
 	profiles.order = 500
 	 
 	AceConfig:RegisterOptionsTable( "DiceMaster", options )	
-	AceConfig:RegisterOptionsTable( "Health/Resource Bars", charges )	
-	AceConfig:RegisterOptionsTable( "Progress Bar", progressbar )	
-	AceConfig:RegisterOptionsTable( "Dungeon Manager", dmmanager )	
-	AceConfig:RegisterOptionsTable( "DiceMaster Profiles", profiles )
+	AceConfig:RegisterOptionsTable( "Barras de salud/Maná", charges )	
+	AceConfig:RegisterOptionsTable( "Barra de progreso", progressbar )	
+	AceConfig:RegisterOptionsTable( "Aministrador de mazmorra", dmmanager )	
+	AceConfig:RegisterOptionsTable( "Perfiles de Dicemaster", profiles )
 	
 	Me.config = AceConfigDialog:AddToBlizOptions( "DiceMaster", "DiceMaster" )
-	Me.configCharges = AceConfigDialog:AddToBlizOptions( "Health/Resource Bars", "Health/Resource Bars", "DiceMaster" )
-	Me.configProgressBar = AceConfigDialog:AddToBlizOptions( "Progress Bar", "Progress Bar", "DiceMaster" )
-	Me.configManager = AceConfigDialog:AddToBlizOptions( "Dungeon Manager", "Dungeon Manager", "DiceMaster" )
-	Me.configProfiles = AceConfigDialog:AddToBlizOptions( "DiceMaster Profiles", "Profiles", "DiceMaster" )
+	Me.configCharges = AceConfigDialog:AddToBlizOptions( "Barras de salud/Maná", "Barras de salud/Maná", "DiceMaster" )
+	Me.configProgressBar = AceConfigDialog:AddToBlizOptions( "Barra de progreso", "Barra de progreso", "DiceMaster" )
+	Me.configManager = AceConfigDialog:AddToBlizOptions( "Aministrador de mazmorra", "Aministrador de mazmorra", "DiceMaster" )
+	Me.configProfiles = AceConfigDialog:AddToBlizOptions( "Perfiles de Dicemaster", "Perfiles", "DiceMaster" )
 	
 	local function CreateLogo( frame )
 		local logo = CreateFrame('Frame', nil, frame, BackdropTemplateMixin and "BackdropTemplate")

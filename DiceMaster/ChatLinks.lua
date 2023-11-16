@@ -59,7 +59,7 @@ local function CheckTooltipForTerms( text )
 			local matchFound = string.match( text, v[i].subName )
 			if matchFound then
 				local desc = gsub( v[i].desc, "Roll", "An attempt" )
-				local termsString = Me.FormatIconForText( v[i].iconID ) .. " |cFFFFFFFF" .. v[i].name .. "|r|n|cFFffd100" .. desc .. "|r|n|cFF707070(Modified by " .. v[i].skill .. " + " .. v[i].name .. ")|r"
+				local termsString = Me.FormatIconForText( v[i].iconID ) .. " |cFFFFFFFF" .. v[i].name .. "|r|n|cFFffd100" .. desc .. "|r|n|cFF707070(Modificado por " .. v[i].skill .. " + " .. v[i].name .. ")|r"
 				
 				if not tContains( termsTable, termsString ) then
 					tinsert( termsTable, termsString )

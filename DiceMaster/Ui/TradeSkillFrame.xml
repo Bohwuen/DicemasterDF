@@ -902,7 +902,7 @@
 									</OnClick>
 									<OnEnter>
 										GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-										GameTooltip:SetText("Unlearn Recipe");
+										GameTooltip:SetText("Olvidar receta");
 									</OnEnter>
 									<OnLeave>
 										GameTooltip:Hide();						

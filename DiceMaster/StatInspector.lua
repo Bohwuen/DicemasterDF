@@ -49,7 +49,7 @@ local function GetModifierNamesFromSkillGUID( guid )
 		return
 	end
 
-	local modifiers = "(Modified by " .. GetSkillByGUID( skill.skillModifiers[1] )["name"];
+	local modifiers = "(Modificado por " .. GetSkillByGUID( skill.skillModifiers[1] )["name"];
 	
 	-- Grab values from skills in the modifiers table
 	-- by GUID
@@ -265,7 +265,7 @@ function Me.StatInspector_SetStatusBar( statusBarID, skillIndex, numSkills )
 			if modifier and tonumber( modifier.rank ) ~= 0 then
 				-- Add an extra line if it's the first skill
 				if i == 1 then
-					expandedDescription = expandedDescription .. "|n|n|cFFFFFFFFModifiers:|r|n"
+					expandedDescription = expandedDescription .. "|n|n|cFFFFFFFFModificadores:|r|n"
 				end
 				if i == #skillModifiers then
 					expandedDescription = expandedDescription .. color .. modifier.rank .. "|r " .. "|T" .. modifier.icon .. ":12|t " .. modifier.name;
@@ -396,9 +396,9 @@ function Me.StatInspectorDetailFrame_SetStatusBar( skillPosition )
 				-- Add an extra line if it's the first skill
 				if i == 1 then
 					if not( skillDescription ) then
-						skillDescription = "|cFFFFD100Modifiers:|r "
+						skillDescription = "|cFFFFD100Modificadores:|r "
 					else
-						skillDescription = skillDescription .. "|n|n|cFFFFD100Modifiers:|r "
+						skillDescription = skillDescription .. "|n|n|cFFFFD100Modificadores:|r "
 					end
 				end
 				if i == #skillModifiers then
@@ -410,10 +410,10 @@ function Me.StatInspectorDetailFrame_SetStatusBar( skillPosition )
 		end
 	end
 	if ( skillDescription and skillAuthor ) then
-		DiceMasterStatInspectorSkillDetailDescriptionText:SetText(skillDescription .. "|n|n|cFFFFD100Creator:|r "..skillAuthor.."|n");
+		DiceMasterStatInspectorSkillDetailDescriptionText:SetText(skillDescription .. "|n|n|cFFFFD100Creador:|r "..skillAuthor.."|n");
 		DiceMasterStatInspectorSkillDetailDescriptionText:Show();
 	elseif skillAuthor then
-		DiceMasterStatInspectorSkillDetailDescriptionText:SetText("|cFFFFD100Creator:|r "..skillAuthor.."|n");
+		DiceMasterStatInspectorSkillDetailDescriptionText:SetText("|cFFFFD100Creador:|r "..skillAuthor.."|n");
 		DiceMasterStatInspectorSkillDetailDescriptionText:Show();
 	else
 		DiceMasterStatInspectorSkillDetailDescriptionText:SetText("");

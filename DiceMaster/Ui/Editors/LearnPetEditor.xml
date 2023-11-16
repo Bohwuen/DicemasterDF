@@ -115,8 +115,8 @@
 						</Anchors>
 						<KeyValues>
 							<KeyValue key="atlas" value="Barbershop-32x32"/>
-							<KeyValue key="title" value="Select Model"/>
-							<KeyValue key="description" value="Choose a model for this pet."/>
+							<KeyValue key="title" value="Seleccionar modelo"/>
+							<KeyValue key="description" value="Seleccionar modelo para la mascota."/>
 						</KeyValues>
 						<Scripts>
 							<OnClick>
@@ -130,8 +130,8 @@
 						</Anchors>
 						<KeyValues>
 							<KeyValue key="atlas" value="UI-HUD-Minimap-Zoom-In"/>
-							<KeyValue key="title" value="Increase Scale"/>
-							<KeyValue key="description" value="Increase the scale of the pet's model."/>
+							<KeyValue key="title" value="Incrementar escala"/>
+							<KeyValue key="description" value="Incrementar la escala del modelo de mascota."/>
 						</KeyValues>
 						<Scripts>
 							<OnClick>
@@ -147,8 +147,8 @@
 						</Anchors>
 						<KeyValues>
 							<KeyValue key="atlas" value="UI-HUD-Minimap-Zoom-Out"/>
-							<KeyValue key="title" value="Decrease Scale"/>
-							<KeyValue key="description" value="Decrease the scale of the pet's model."/>
+							<KeyValue key="title" value="Disminuir escala"/>
+							<KeyValue key="description" value="Disminuir la escala del modelo de mascota."/>
 						</KeyValues>
 						<Scripts>
 							<OnShow>

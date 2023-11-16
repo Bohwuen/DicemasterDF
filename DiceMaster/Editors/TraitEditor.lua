@@ -204,15 +204,15 @@ StaticPopupDialogs["DICEMASTER4_DELETETRAIT"] = {
 }
 
 StaticPopupDialogs["DICEMASTER4_UNLEARNSKILL"] = {
-  text = "Do you want to unlearn %s, and lose all proficiency in this skill?",
-  button1 = "Unlearn",
-  button2 = "Cancel",
+  text = "Estás seguro de que quieres olvidar %s, y perder todo el avance en la habilidad?",
+  button1 = "Olvidar",
+  button2 = "Cancelar",
   OnAccept = function (self, data)
 	if not ( Me.Profile.skills[data] ) then
 		return
 	end
 	
-	Me.PrintMessage( "|cFFFFFF00You have unlearned " .. Me.Profile.skills[data].name .. ".", "SYSTEM" )
+	Me.PrintMessage( "|cFFFFFF00Has olvidado " .. Me.Profile.skills[data].name .. ".", "SYSTEM" )
 	tremove( Me.Profile.skills, data )
 	DiceMasterSkillFrame.statusBarClickedPosition = nil;
 	Me.SkillFrame_UpdateSkills()
@@ -1723,7 +1723,7 @@ function Me.SkillFrame_CreateDefaults()
 	
 	Me.SkillFrame_UpdateSkills();
 	DiceMasterTraitEditor.NoSkillsWarning:Hide();
-	Me.PrintMessage( "|cFF8080ffYou have gained ".. #Profile.skills .." new skills.|r", "SYSTEM" )
+	Me.PrintMessage( "|cFF8080ffHas ganado la nueva habilidad ".. #Profile.skills ..".|r", "SYSTEM" )
 end
 
 local function Placer_OnUpdate(self)
@@ -1848,12 +1848,12 @@ function Me.SkillFrame_ImportSheet()
 	
 	Profile.skills = T;
 	if #Profile.skills > 10 then
-		Me.PrintMessage( "|cFF8080ffYou have gained ".. #Profile.skills .." new skills.|r", "SYSTEM" );
+		Me.PrintMessage( "|cFF8080ffHas ganado las nuevas habilidades ".. #Profile.skills ..".|r", "SYSTEM" );
 	else
 		for i = 1, #Profile.skills do
 			local skill = Profile.skills[i];
 			if skill.name and not( skill.type == "header" ) then
-				Me.PrintMessage( "|cFF8080ffYou have gained the ".. skill.name .." skill.|r", "SYSTEM" );
+				Me.PrintMessage( "|cFF8080ffHas ganado las nuevas habilidades ".. skill.name ..".|r", "SYSTEM" );
 			end
 		end
 	end
@@ -1895,13 +1895,13 @@ end
 function Me.SkillFrameAlignment_OnClick(self, arg1, arg2, checked)
 	Me.Profile.alignment = arg1;
 	UIDropDownMenu_SetSelectedValue(DiceMasterSkillFrameAlignmentDropdown, arg1, false)
-	UIDropDownMenu_SetText( DiceMasterSkillFrameAlignmentDropdown, "|cFFFFD100Alignment:|r " .. Me.Profile.alignment )
+	UIDropDownMenu_SetText( DiceMasterSkillFrameAlignmentDropdown, "|cFFFFD100Alineamiento:|r " .. Me.Profile.alignment )
 end
 
 function Me.SkillFrameAlignment_OnLoad(frame, level, menuList)
 	local info = UIDropDownMenu_CreateInfo();
 	if level == 1 then
-		info.text = "Alignments";
+		info.text = "Alineamiento";
 		info.isTitle = true;
 		info.notClickable = true;
 		info.notCheckable = true;
@@ -1915,14 +1915,14 @@ function Me.SkillFrameAlignment_OnLoad(frame, level, menuList)
 			info.menuList = k;
 			UIDropDownMenu_AddButton(info);
 		end
-		info.text = "(None)";
+		info.text = "(Ninguno)";
 		info.arg1 = "(None)";
 		info.func = Me.SkillFrameAlignment_OnClick;
 		info.notCheckable = false;
 		info.hasArrow = false;
 		info.isTitle = false;
 		info.tooltipTitle = "(None)";
-		info.tooltipText = "This character has no alignment.";
+		info.tooltipText = "Este personaje no tiene alineamiento.";
 		info.tooltipOnButton = true;
 		info.menuList = nil;
 		info.checked = Me.Profile.alignment == info.text;
@@ -2043,7 +2043,7 @@ function Me.SkillFrame_SetStatusBar( statusBarID, skillIndex, numSkills )
 			if tonumber( modifier.rank ) ~= 0 then
 				-- Add an extra line if it's the first skill
 				if i == 1 then
-					expandedDescription = expandedDescription .. "|n|n|cFFFFFFFFModifiers:|r|n"
+					expandedDescription = expandedDescription .. "|n|n|cFFFFFFFFModificadores:|r|n"
 				end
 				if i == #skillModifiers then
 					expandedDescription = expandedDescription .. color .. modifier.rank .. "|r " .. "|T" .. modifier.icon .. ":12|t " .. modifier.name;
@@ -2207,9 +2207,9 @@ function Me.SkillDetailFrame_SetStatusBar( skillPosition )
 				-- Add an extra line if it's the first skill
 				if i == 1 then
 					if not( skillDescription ) then
-						skillDescription = "|cFFFFD100Modifiers:|r "
+						skillDescription = "|cFFFFD100Modificadores:|r "
 					else
-						skillDescription = skillDescription .. "|n|n|cFFFFD100Modifiers:|r "
+						skillDescription = skillDescription .. "|n|n|cFFFFD100Modificadores:|r "
 					end
 				end
 				if i == #skillModifiers then
@@ -2221,10 +2221,10 @@ function Me.SkillDetailFrame_SetStatusBar( skillPosition )
 		end
 	end
 	if ( skillDescription and skillAuthor ) then
-		DiceMasterSkillDetailDescriptionText:SetText(skillDescription .. "|n|n|cFFFFD100Creator:|r "..skillAuthor.."|n");
+		DiceMasterSkillDetailDescriptionText:SetText(skillDescription .. "|n|n|cFFFFD100Creador:|r "..skillAuthor.."|n");
 		DiceMasterSkillDetailDescriptionText:Show();
 	elseif skillAuthor then
-		DiceMasterSkillDetailDescriptionText:SetText("|cFFFFD100Creator:|r "..skillAuthor.."|n");
+		DiceMasterSkillDetailDescriptionText:SetText("|cFFFFD100Creador:|r "..skillAuthor.."|n");
 		DiceMasterSkillDetailDescriptionText:Show();
 	else
 		DiceMasterSkillDetailDescriptionText:SetText("");
@@ -2329,7 +2329,7 @@ function Me.SkillFrame_UpdateSkills()
 	end
 	
 	-- Update the alignment dropdown button
-	UIDropDownMenu_SetText( DiceMasterSkillFrameAlignmentDropdown, "|cFFFFD100Alignment:|r " .. Me.Profile.alignment )
+	UIDropDownMenu_SetText( DiceMasterSkillFrameAlignmentDropdown, "|cFFFFD100Alineamiento:|r " .. Me.Profile.alignment )
 
 	-- Hide unused bars
 	for i=index, 12 do

@@ -49,15 +49,15 @@ function Me.AdjustHealthEditor_AdjustHealth( data )
 	end
 	
 	if data.health > 0 then
-		Me.PrintMessage( "You have gained |cFFFFFFFF" .. data.health .. "|r|TInterface/AddOns/DiceMaster/Texture/health-heart:12|t!", "RAID" )
+		Me.PrintMessage( "Has ganado |cFFFFFFFF" .. data.health .. "|r|TInterface/AddOns/DiceMaster/Texture/health-heart:12|t!", "RAID" )
 	elseif data.health < 0 then
-		Me.PrintMessage( "You have lost |cFFFFFFFF" .. data.health .. "|r|TInterface/AddOns/DiceMaster/Texture/health-heart:12|t!", "RAID" )
+		Me.PrintMessage( "Has perdido |cFFFFFFFF" .. data.health .. "|r|TInterface/AddOns/DiceMaster/Texture/health-heart:12|t!", "RAID" )
 	end
 	
 	if data.armour > 0 then
-		Me.PrintMessage( "You have gained |cFFFFFFFF" .. data.armour .. "|r|TInterface/AddOns/DiceMaster/Texture/armour-icon:12|t!", "RAID" )
+		Me.PrintMessage( "Has ganado |cFFFFFFFF" .. data.armour .. "|r|TInterface/AddOns/DiceMaster/Texture/armour-icon:12|t!", "RAID" )
 	elseif data.armour < 0 then
-		Me.PrintMessage( "You have lost |cFFFFFFFF" .. data.armour .. "|r|TInterface/AddOns/DiceMaster/Texture/armour-icon:12|t!", "RAID" )
+		Me.PrintMessage( "Has perdido |cFFFFFFFF" .. data.armour .. "|r|TInterface/AddOns/DiceMaster/Texture/armour-icon:12|t!", "RAID" )
 	end
 	
 	Me.RefreshHealthbarFrame( DiceMasterChargesFrame.healthbar, Profile.health, Profile.healthMax, Profile.armor )

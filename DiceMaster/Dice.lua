@@ -104,11 +104,11 @@ function Me.FormatDiceString( dice, modifier )
 	if modifier then
 		if Me.db.global.enableD10 then
 			count = count + modifier - 1
-			if count == 0 then
-				count = count + modifier +1
+			--if count == 0 then
+				--count = count + modifier + 1
+			else	
+				mod = mod + modifier
 		end
-		else 
-			mod = mod + modifier
 	end
 	
 	if Me.PermittedUse() and mod > 10 then
@@ -116,8 +116,8 @@ function Me.FormatDiceString( dice, modifier )
 	end
 	
 	return Me.FormatDiceType( count, sides, mod )
-end
-end
+	end
+--end
 
 -------------------------------------------------------------------------------
 -- Colorizes a number if it's the minimum or maximum amount.

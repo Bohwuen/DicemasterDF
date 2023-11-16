@@ -43,7 +43,7 @@
         <Scripts>
           <OnLoad>
             
-            self:SetCustomTooltip( "|cFFFFD100Click to select an icon for this skill." )
+            self:SetCustomTooltip( "|cFFFFD100Click para seleccionar un icono para esta habilidad." )
             
           </OnLoad>
           <OnClick>
@@ -185,8 +185,8 @@
 			
 			<Scripts>
 				<OnLoad>
-					_G[self:GetName().."Text"]:SetText("|cFFFFD100Editable by Others")
-					self.tooltip = "Toggles whether this skill can be edited by other players if imported or learned from an item."
+					_G[self:GetName().."Text"]:SetText("|cFFFFD100Editable por otros")
+					self.tooltip = "Activa o desactiva si esta habilidad puede ser editada por otros jugadores si es importada o aprendida de un objeto."
 				</OnLoad>
 			</Scripts>
 		</CheckButton>
@@ -233,7 +233,7 @@
 					<Anchor point="BOTTOM" relativePoint="TOP" x="0" y="-16" />
 				</Anchors>
 			</Texture>
-			<FontString inherits="GameFontNormal" justifyH="center" text="Learn Skill">
+			<FontString inherits="GameFontNormal" justifyH="center" text="Aprender Habilidad">
 				<Anchors>
 				  <Anchor point="TOP" x="0" y="-12"/> 
 				</Anchors>

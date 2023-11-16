@@ -123,14 +123,14 @@ StaticPopupDialogs["DICEMASTER4_CREATESKILLHEADER"] = {
 	
 	local header = {
 		name = data;
-		type = "header";
+		type = "cabecera";
 		author = UnitName("player");
 	};
 	tinsert( Me.Profile.skills, header )
 	Me.SkillFrame_UpdateSkills()
 	
 	UIDropDownMenu_SetSelectedValue(DiceMasterSkillEditor.SkillType, data, false)
-	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Category:|r " .. data )
+	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Categoría:|r " .. data )
   end,
   hasEditBox = true,
   timeout = 0,
@@ -143,13 +143,13 @@ local SkillEditorModifiers = {};
 
 function Me.SkillEditorType_OnClick(self, arg1, arg2, checked)
 	UIDropDownMenu_SetSelectedValue(DiceMasterSkillEditor.SkillType, arg1, false)
-	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Category:|r " .. arg1 )
+	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Categoría:|r " .. arg1 )
 end
 
 function Me.SkillEditorType_OnLoad(frame, level, menuList)
 	local skillsList = {};
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type == "header" then
+		if Me.Profile.skills[i].type == "cabecera" then
 			tinsert( skillsList, Me.Profile.skills[i] )
 		end
 	end
@@ -157,7 +157,7 @@ function Me.SkillEditorType_OnLoad(frame, level, menuList)
 	local info = UIDropDownMenu_CreateInfo()
 	info.isNotRadio = true;
 	info.notCheckable = true;
-	info.text = "Skill Categories";
+	info.text = "Categorias de habilidad";
 	info.isTitle = true;
 	UIDropDownMenu_AddButton(info, level);
 	for i = 1, #skillsList do	
@@ -172,7 +172,7 @@ function Me.SkillEditorType_OnLoad(frame, level, menuList)
 		info.func = Me.SkillEditorType_OnClick;
 		UIDropDownMenu_AddButton(info, level);
 	end
-	info.text = "|cFF00FF00Create New...|r";
+	info.text = "|cFF00FF00Crear nuevo...|r";
 	info.arg1 = 0;
 	info.value = 0;
 	info.notCheckable = true;
@@ -202,7 +202,7 @@ function Me.SkillEditorModifiers_OnClick(self, arg1, arg2, checked)
 			modifiersList = modifiersList .. ", ".. GetSkillNameFromGUID( SkillEditorModifiers[i] );
 		end
 	end
-	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillModifiers, "|cFFFFD100Skill Modifiers:|r " .. modifiersList )
+	UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillModifiers, "|cFFFFD100Skill Modificador:|r " .. modifiersList )
 end
 
 function Me.SkillEditorModifiers_OnLoad(frame, level, menuList)
@@ -212,7 +212,7 @@ function Me.SkillEditorModifiers_OnLoad(frame, level, menuList)
 	local lastCategory
 	
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type == "header" then
+		if Me.Profile.skills[i].type == "cabecera" then
 			skillList[ Me.Profile.skills[i].name ] = {}
 			lastCategory = Me.Profile.skills[i].name;
 		else
@@ -225,7 +225,7 @@ function Me.SkillEditorModifiers_OnLoad(frame, level, menuList)
 	end
 	
 	if level == 1 then
-		info.text = "Skills";
+		info.text = "Habilidades";
 		info.isTitle = true;
 		info.notClickable = true;
 		info.notCheckable = true;
@@ -251,7 +251,7 @@ function Me.SkillEditorModifiers_OnLoad(frame, level, menuList)
 			info.tooltipTitle = skillList[menuList][i].name;
 			info.tooltipText = skillList[menuList][i].desc or "";
 			if skillList[menuList][i].skillModifiers then
-				info.tooltipText = info.tooltipText .. "|n|cFF707070(Modified by "..GetModifiersListFromSkillGUID( info.arg1 )..")|r";
+				info.tooltipText = info.tooltipText .. "|n|cFF707070(Modificado por "..GetModifiersListFromSkillGUID( info.arg1 )..")|r";
 			end
 			info.tooltipOnButton = true;
 			info.checked = false;
@@ -276,7 +276,7 @@ function Me.SkillEditor_CreateSkill()
 	local canEdit = DiceMasterSkillEditor.Editable:GetChecked();
 
 	if not name or name == "" then
-		UIErrorsFrame:AddMessage( "Invalid name: too short.", 1.0, 0.0, 0.0 );
+		UIErrorsFrame:AddMessage( "Nombre inválido, demasiado corto.", 1.0, 0.0, 0.0 );
 		return
 	end
 	
@@ -286,8 +286,8 @@ function Me.SkillEditor_CreateSkill()
 	
 	-- Search for duplicates
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type ~= "header" and Me.Profile.skills[i].name and Me.Profile.skills[i].name == name then
-			UIErrorsFrame:AddMessage( "A skill with that name already exists.", 1.0, 0.0, 0.0 );
+		if Me.Profile.skills[i].type ~= "cabecera" and Me.Profile.skills[i].name and Me.Profile.skills[i].name == name then
+			UIErrorsFrame:AddMessage( "Ese nombre ya existe.", 1.0, 0.0, 0.0 );
 			return
 		end
 	end
@@ -315,7 +315,7 @@ function Me.SkillEditor_CreateSkill()
 
 	local header = {
 		name = "Miscellaneous";
-		type = "header";
+		type = "Cabecera";
 		author = UnitName("player");
 	}
 	
@@ -326,7 +326,7 @@ function Me.SkillEditor_CreateSkill()
 		tinsert( Me.Profile.skills, skill )
 	end
 	
-	Me.PrintMessage( "|cFF8080ffYou have gained the "..name.." skill.|r", "SYSTEM" )
+	Me.PrintMessage( "|cFF8080ffHas ganado la habilidad "..name..".|r", "SYSTEM" )
 	
 	Me.SkillFrame_UpdateSkills()
 	Me.SkillEditor_Close()
@@ -344,7 +344,7 @@ function Me.SkillEditor_ClearAllFields()
 	editor.Name:SetText( "" )
 	editor.Desc.EditBox:SetText( "" )
 	UIDropDownMenu_SetText( editor.SkillType, "|cFFFFD100Skill Category:|r Miscellaneous" )
-	UIDropDownMenu_SetText( editor.SkillModifiers, "|cFFFFD100Skill Modifiers:|r (None)" )
+	UIDropDownMenu_SetText( editor.SkillModifiers, "|cFFFFD100Skill Modificadores:|r (None)" )
 	SkillEditorModifiers = {};
 	editor.MaxRank:SetText( 100 )
 	
@@ -352,9 +352,9 @@ function Me.SkillEditor_ClearAllFields()
 	-- if it exists
 	local skillsList = {};
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type == "header" then
+		if Me.Profile.skills[i].type == "Cabecera" then
 			UIDropDownMenu_SetSelectedValue(DiceMasterSkillEditor.SkillType, Me.Profile.skills[i].name, false)
-			UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Category:|r " .. Me.Profile.skills[i].name )
+			UIDropDownMenu_SetText( DiceMasterSkillEditor.SkillType, "|cFFFFD100Skill Categoría:|r " .. Me.Profile.skills[i].name )
 			break;
 		end
 	end
@@ -390,7 +390,7 @@ end
 
 local function GetSkillFromGUID( skillGUID )
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type ~= "header" and Me.Profile.skills[i].guid == skillGUID then
+		if Me.Profile.skills[i].type ~= "Cabecera" and Me.Profile.skills[i].guid == skillGUID then
 			local data = {}
 			for k, v in pairs( Me.Profile.skills[i] ) do
 				data[k] = v;
@@ -406,7 +406,7 @@ local function BuildSkillsList()
 	local lastCategory
 	
 	for i = 1, #Me.Profile.skills do
-		if Me.Profile.skills[i].type == "header" then
+		if Me.Profile.skills[i].type == "Cabecera" then
 			skillsList[ Me.Profile.skills[i].name ] = {}
 			lastCategory = Me.Profile.skills[i].name;
 		elseif Me.Profile.skills[i].author and Me.Profile.skills[i].author == UnitName("player") then
@@ -431,7 +431,7 @@ function Me.LearnSkillEditorSkill_OnLoad(frame, level, menuList)
 	local skillsList = BuildSkillsList()
 	
 	if level == 1 then
-		info.text = "|cFFffd100Skills"
+		info.text = "|cFFffd100Habilidades"
 		info.notClickable = true;
 		info.notCheckable = true;
 		UIDropDownMenu_AddButton(info)
@@ -533,7 +533,7 @@ function Me.LearnSkillEditor_LearnSkill( data )
 		tinsert( Me.Profile.skills, skill )
 	end
 	
-	Me.PrintMessage( "|cFF8080ffYou have gained the "..data.name.." skill.|r", "SYSTEM" )
+	Me.PrintMessage( "|cFF8080ffHas ganado la habilidad "..data.name..".|r", "SYSTEM" )
 	
 	Me.SkillFrame_UpdateSkills()
 end
@@ -551,7 +551,7 @@ function Me.LearnSkillEditor_SaveEdits()
 	end
 	
 	if not skill or not skill.name or not skill.guid or not skill.rank or not skill.author then
-		UIErrorsFrame:AddMessage( "You must select a valid skill.", 1.0, 0.0, 0.0 );
+		UIErrorsFrame:AddMessage( "Debes seleccionar una habilidad.", 1.0, 0.0, 0.0 );
 		return
 	end
 	
@@ -590,7 +590,7 @@ function Me.LearnSkillEditor_Save()
 	end
 	
 	if not skill or not skill.name or not skill.guid or not skill.rank or not skill.author then
-		UIErrorsFrame:AddMessage( "You must select a valid skill.", 1.0, 0.0, 0.0 );
+		UIErrorsFrame:AddMessage( "Debes seleccionar una habilidad válida.", 1.0, 0.0, 0.0 );
 		return
 	end
 	

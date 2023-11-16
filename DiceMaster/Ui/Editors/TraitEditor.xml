@@ -1134,7 +1134,7 @@
 				
 				<Scripts>
 					<OnLoad>
-						_G[self:GetName().."Text"]:SetText("Enable Pet")
+						_G[self:GetName().."Text"]:SetText("Activar mascota")
 					</OnLoad>
 					<OnClick>
 						DiceMaster4.Profile.pet.enable = self:GetChecked()
@@ -1258,7 +1258,7 @@
 						PlaySound(857);
 						local lastCastTime = self.lastCastTime or 0;
 						if time() - lastCastTime &lt; 10 then
-							UIErrorsFrame:AddMessage( "That ability is not ready yet.", 1.0, 0.0, 0.0, 1 ); 
+							UIErrorsFrame:AddMessage( "Esa habilidad no está lista aún.", 1.0, 0.0, 0.0, 1 ); 
 							return 
 						end
 						DiceMaster4.PetEditor_CleanPetDroppings();
@@ -1274,7 +1274,7 @@
 				</Anchors>
 				<Scripts>
 				  <OnLoad>
-					self:SetCustomTooltip( "|cFFFFD100Click to select an icon for your pet." )
+					self:SetCustomTooltip( "|cFFFFD100Click para seleccionar el icono para tu mascota." )
 				  </OnLoad>
 				  <OnClick>
 					PlaySound(54132)
@@ -1355,7 +1355,7 @@
 				<Scripts>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-						GameTooltip:AddLine("Pet Item");
+						GameTooltip:AddLine("Objeto de mascota");
 						GameTooltip:Show();
 					</OnEnter>
 					<OnLeave function="GameTooltip_Hide"/>
@@ -1451,8 +1451,8 @@
 							</OnMouseUp>
 							<OnEnter>
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-								GameTooltip_SetTitle(GameTooltip, "Rotate Left", HIGHLIGHT_FONT_COLOR);
-								GameTooltip_AddNormalLine(GameTooltip, "Rotate the model to the left.", true);
+								GameTooltip_SetTitle(GameTooltip, "Rotar a la izquierda", HIGHLIGHT_FONT_COLOR);
+								GameTooltip_AddNormalLine(GameTooltip, "Rota el modelo hacia la izquierda.", true);
 								GameTooltip:Show();
 							</OnEnter>
 							<OnLeave function="GameTooltip_Hide"/>
@@ -1487,8 +1487,8 @@
 							</OnMouseUp>
 							<OnEnter>
 								GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-								GameTooltip_SetTitle(GameTooltip, "Rotate Right", HIGHLIGHT_FONT_COLOR);
-								GameTooltip_AddNormalLine(GameTooltip, "Rotate the model to the right.", true);
+								GameTooltip_SetTitle(GameTooltip, "Rotar a la derecha", HIGHLIGHT_FONT_COLOR);
+								GameTooltip_AddNormalLine(GameTooltip, "Rotar el modelo hacia la derecha.", true);
 								GameTooltip:Show();
 							</OnEnter>
 							<OnLeave function="GameTooltip_Hide"/>
@@ -1569,8 +1569,8 @@
 					</OnMouseUp>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-						GameTooltip_SetTitle(GameTooltip, "Increase Scale", HIGHLIGHT_FONT_COLOR);
-						GameTooltip_AddNormalLine(GameTooltip, "Increase the scale of your pet's model.");
+						GameTooltip_SetTitle(GameTooltip, "Incrementar escala", HIGHLIGHT_FONT_COLOR);
+						GameTooltip_AddNormalLine(GameTooltip, "Incrementar la escala del modelo de mascota.");
 						GameTooltip:Show();
 					</OnEnter>
 					<OnLeave function="GameTooltip_Hide"/>
@@ -1608,8 +1608,8 @@
 					</OnMouseUp>
 					<OnEnter>
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-						GameTooltip_SetTitle(GameTooltip, "Decrease Scale", HIGHLIGHT_FONT_COLOR);
-						GameTooltip_AddNormalLine(GameTooltip, "Decrease the scale of your pet's model.");
+						GameTooltip_SetTitle(GameTooltip, "Disminuir escala", HIGHLIGHT_FONT_COLOR);
+						GameTooltip_AddNormalLine(GameTooltip, "Disminuir la escala del modelo de mascota.");
 						GameTooltip:Show();
 					</OnEnter>
 					<OnLeave function="GameTooltip_Hide"/>
@@ -2220,7 +2220,7 @@
 				</Anchors>
 				<KeyValues>
 					<KeyValue key="texture" value="Interface/MINIMAP/TRACKING/None"/>
-					<KeyValue key="title" value="Inspect"/>
+					<KeyValue key="title" value="Inspeccionar"/>
 					<KeyValue key="description" value="Inspect the details of an item."/>
 				</KeyValues>
 				<Scripts>
@@ -2880,7 +2880,7 @@
 		</Scripts>
 	  </Frame>
 	  
-	  <Button name="$parentTab1" parentKey="Tab1" useParentLevel="true" inherits="PanelTabButtonTemplate" id="1" text="Traits">
+	  <Button name="$parentTab1" parentKey="Tab1" useParentLevel="true" inherits="PanelTabButtonTemplate" id="1" text="Rasgos">
 			<Anchors>
 				<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" x="11" y="2"/>
 			</Anchors>
@@ -2894,7 +2894,7 @@
 					PanelTemplates_SetTab(DiceMaster4.editor, 1);
                     DiceMasterTraitsFrame:Show();
 					DiceMasterTraitEditor.PortraitContainer.portrait:SetTexture( "Interface/AddOns/DiceMaster/Texture/TraitFrameIcon" )
-					DiceMasterTraitEditorTitleText:SetText("Traits");
+					DiceMasterTraitEditorTitleText:SetText("Rasgos");
 					DiceMasterTraitEditor.NoSkillsWarning:Hide()
 					DiceMasterTraitEditor.FormatBar:Show();
 					for i = 1,5 do
@@ -2914,7 +2914,7 @@
 			</Scripts>
 		</Button>
 		
-	  <Button name="$parentTab2" parentKey="Tab2" useParentLevel="true" inherits="PanelTabButtonTemplate" id="2" text="Skills">
+	  <Button name="$parentTab2" parentKey="Tab2" useParentLevel="true" inherits="PanelTabButtonTemplate" id="2" text="Habilidades">
 		<Anchors>
 			<Anchor point="TOPLEFT" relativeKey="$parent.Tab1" relativePoint="TOPRIGHT" x="1"/>
 		</Anchors>
@@ -2928,7 +2928,7 @@
 				PanelTemplates_SetTab(DiceMaster4.editor, 2);
 				DiceMasterTraitsFrame:Hide();
 				DiceMasterTraitEditor.PortraitContainer.portrait:SetTexture( "Interface/AddOns/DiceMaster/Texture/SkillsFrameIcon" )
-				DiceMasterTraitEditorTitleText:SetText("Skills");
+				DiceMasterTraitEditorTitleText:SetText("Habilidades");
 				DiceMasterTraitEditor.FormatBar:Hide();
 				for i = 1,5 do
 					DiceMaster4.editor.trait_buttons[i]:Hide();
@@ -2947,7 +2947,7 @@
 		</Scripts>
 	  </Button>
 	  
-	  <Button name="$parentTab3" parentKey="Tab3" useParentLevel="true" inherits="PanelTabButtonTemplate" id="3" text="Pet">
+	  <Button name="$parentTab3" parentKey="Tab3" useParentLevel="true" inherits="PanelTabButtonTemplate" id="3" text="Mascota">
 		<Anchors>
 			<Anchor point="TOPLEFT" relativeKey="$parent.Tab2" relativePoint="TOPRIGHT" x="1"/>
 		</Anchors>
@@ -2959,7 +2959,7 @@
 				DiceMaster4.editor.Inset:Show();
 				DiceMaster4.editor.Bg:Show()
 				DiceMasterTraitEditor.PortraitContainer.portrait:SetTexture( "Interface/AddOns/DiceMaster/Texture/PetFrameIcon" )
-				DiceMasterTraitEditorTitleText:SetText("Pet");
+				DiceMasterTraitEditorTitleText:SetText("Mascota");
 				PanelTemplates_SetTab(DiceMaster4.editor, 3);
 				DiceMasterTraitsFrame:Hide();
 				DiceMasterTraitEditor.NoSkillsWarning:Hide()
@@ -3211,8 +3211,8 @@
 			</Anchors>
 			<Scripts>
 				<OnLoad>
-					self.tooltipTitle = "Clear";
-					self.tooltipText = "Reset this trait to default.";
+					self.tooltipTitle = "Limpiar";
+					self.tooltipText = "Reinicia este rasgo por defecto.";
 					self.icon:SetTexCoord( 0.25, 0.5, 0, 0.25 );
 				</OnLoad>
 				<OnClick>
@@ -3228,8 +3228,8 @@
 			<Scripts>
 				<OnLoad>
 					self.tooltipTitle = "Color";
-					self.tooltipText = "Insert a text color tag.";
-					self.tooltipTip = "The color tag uses this format:|n|n|cFF808080&lt;color=|cFFFF0000RR|r|cFF00FF00GG|r|cFF0000FFBB|r>|rtext|cFF808080&lt;/color>|r|n|nEach pair of digits represents a color value as a hexidecimal number."
+					self.tooltipText = "Inserta una etiqueta de color.";
+					self.tooltipTip = "La etiqueta de color emplea este formato:|n|n|cFF808080&lt;color=|cFFFF0000RR|r|cFF00FF00GG|r|cFF0000FFBB|r>|rtext|cFF808080&lt;/color>|r|n|nCada par de digitos representa un color en código hexadecimal."
 					self.icon:SetTexCoord( 0, 0.25, 0, 0.25 );
 				</OnLoad>
 				<OnClick>

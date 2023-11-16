@@ -1131,7 +1131,7 @@ function Me.GetModifierNamesFromSkillGUID( guid )
 		return
 	end
 
-	local modifiers = "|cFFFFD100Modifiers:|r " .. Me.GetSkillByGUID( skill.skillModifiers[1] )["name"];
+	local modifiers = "|cFFFFD100Modificadores:|r " .. Me.GetSkillByGUID( skill.skillModifiers[1] )["name"];
 	
 	-- Grab values from skills in the modifiers table
 	-- by GUID

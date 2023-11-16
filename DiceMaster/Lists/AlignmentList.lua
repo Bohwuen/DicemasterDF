@@ -4,64 +4,64 @@
 --
 
 DiceMaster4.AlignmentList = {
-	["Lawful Alignments"] = {
+	["Alineamientos Buenos"] = {
 		{
-			name = "Lawful Good",
-			desc = "The best of the best, the lawful good character acts on the side of goodness, righteousness, and order. The warrior who is beholden to a lord or a church, the priest dedicated to healing the wretched - anyone who cannot stand by while others suffer. They will chase evil to the end of the world.", 
+			name = "Legal Bueno",
+			desc = "Lo mejor de lo mejor, el personaje legal bueno actúa a favor de la bondad, la rectitud y el orden. El guerrero que está sujeto a un señor o una iglesia, el sacerdote dedicado a curar a los desafortunados; cualquiera que no pueda quedarse de brazos cruzados mientras otros sufren. Perseguirán el mal hasta el fin del mundo.",
 			descriptors = "",
-			examples = { "The Argent Dawn", "Prophet Velen", "Uther the Lightbringer", },
+			examples = { "El Alba Argenta", "Profeta Velen", "Uther el Iluminado", },
 		},
 		{
-			name = "Lawful Neutral",
-			desc = "The hater of chaos, a lawful neutral character will stick to the letter of the law, whether it is their personal code of rules, their king's, or their religion's. This character finds chaos as abhorrent as evil and will not bend their personal guidelines even to help another if it will contribute to chaos.", 
+			name = "Legal Neutral",
+			desc = "El que odia el caos, un personaje legal neutral se adhiere a la letra de la ley, ya sea su código personal de reglas, el de su rey o el de su religión. Este personaje encuentra el caos tan aborrecible como el mal y no torcerá sus directrices personales ni siquiera para ayudar a otro si contribuirá al caos.",
 			descriptors = "",
-			examples = { "The Kirin Tor", "Malfurion Stormrage", "Maiev Shadowsong", },
+			examples = { "El Kirin Tor", "Malfurion Tempestira", "Maiev Cantosombrío", },
 		},
 		{
-			name = "Lawful Evil",
-			desc = "A being who gains power through methodically destroying others is lawful evil. Power comes through order, but one can be orderly about slaughtering innocents. Tradition is important, but goodness is not.", 
+			name = "Legal Malvado",
+			desc = "Un ser que obtiene poder destruyendo metódicamente a otros es legal malvado. El poder proviene del orden, pero se puede ser ordenado al masacrar a inocentes. La tradición es importante, pero la bondad no lo es.",
 			descriptors = "",
-			examples = { "The Scarlet Crusade", "The Cult of the Damned", "The Lich King", },
-		},
-	},
-	["Neutral Alignments"] = {
-		{
-			name = "Neutral Good",
-			desc = "Ultimately a giver, the neutral good character will do what they can to help, working within law or chaos; but ultimately they prefer their own counsel.", 
-			descriptors = "",
-			examples = { "The Explorer's League", "Thrall", "Jaina Proudmoore",  },
-		},
-		{
-			name = "True Neutral",
-			desc = "A middle-of-the-road character, a neutral character finds it difficult to fit into any other distinction. They do what seems to be a good idea, whether it flows with law or chaos, good or evil. Often a follower and at times superb leaders, they'll rarely go against the group.", 
-			descriptors = "",
-			examples = { "Trade Prince Gallywix", "Taran Zhu", "Brightwing", },
-		},
-		{
-			name = "Neutral Evil",
-			desc = "A neutral evil character serves only their own needs or ends. They follow no law, but also have no drive toward chaos. They kill or steal as they see fit to get what they want.", 
-			descriptors = "",
-			examples = { "The Defias Brotherhood", "Gul'dan", "Sylvanas Windrunner", },
+			examples = { "La Cruzada Escarlata", "La Secta de los Malditos", "El Rey Exánime", },
 		},
 	},
-	["Chaotic Alignments"] = {
+	["Alineamientos Neutrales"] = {
 		{
-			name = "Chaotic Good",
-			desc = "The hero of the downtrodden, the chaotic good character cares not for laws and order but only for doing good. If they must break the law to help others, they will do so without compunction. This character will steal to feed a poor family or stand up to their own master to defend a falsely accused servant.", 
+			name = "Neutral Bueno",
+			desc = "En última instancia, un dador, el personaje neutral bueno hará lo que pueda para ayudar, trabajando dentro de la ley o el caos; pero en última instancia, prefieren su propio juicio.",
 			descriptors = "",
-			examples = { "The Cenarion Circle", "Alexstrasza the Life-Binder", "Vol'jin", },
+			examples = { "La Liga de los Exploradores", "Thrall", "Jaina Valiente", },
 		},
 		{
-			name = "Chaotic Neutral",
-			desc = "The true individual, the chaotic neutral character prizes their own freedom above all else. They do not want ties to either good or evil to influence them, preferring to make their own way as they see fit. Most chaotic neutral characters care nothing for people in their groups, have little to no allegiances, caring only for themselves.", 
+			name = "Neutral Verdadero ",
+			desc = "Un personaje neutral, un personaje neutral encuentra difícil encajar en cualquier otra distinción. Hacen lo que parece ser una buena idea, ya sea que esté en línea con la ley o el caos, el bien o el mal. A menudo son seguidores y a veces líderes soberbios; rara vez irán en contra del grupo.",
 			descriptors = "",
-			examples = { "Ragnaros the Firelord", "Grommash Hellscream", "Illidan Stormrage",  },
+			examples = { "Príncipe Comerciante Gallywix", "Taran Zhu", "Alabruja", },
 		},
 		{
-			name = "Chaotic Evil",
-			desc = "With the drive of pure hatred, the chaotic evil character will do whatever they can to attain their goals. They are bound by no laws, no master, and no compassion. While unlikely to run down the street slaying innocents (chaotic evil does not mean stupid), this character would have no regrets about doing so.", 
+			name = "Neutral Malvado",
+			desc = "Un personaje neutral malvado sirve solo a sus propias necesidades o fines. No siguen ninguna ley, pero tampoco tienen una inclinación hacia el caos. Matan o roban según les parezca para conseguir lo que quieren.",
 			descriptors = "",
-			examples = { "The Undead Scourge", "The Burning Legion", "Deathwing the Destroyer", },
+			examples = { "La Hermandad Defias", "Gul'dan", "Sylvanas Brisaveloz", },
+		},
+	},
+	["Alineamientos Malignos"] = {
+		{
+			name = "Caótico Bueno",
+			desc = "El héroe de los oprimidos, el personaje caótico bueno no se preocupa por las leyes y el orden, sino solo por hacer el bien. Si tienen que quebrantar la ley para ayudar a otros, lo harán sin vacilación. Este personaje robará para alimentar a una familia pobre o se enfrentará a su propio amo para defender a un sirviente falsamente acusado.",
+			descriptors = "",
+			examples = { "El Círculo Cenarion", "Alexstrasza la Madre de la Vida", "Vol'jin", },
+		},
+		{
+			name = "Caótico Neutral",
+			desc = "El verdadero individualista, el personaje caótico neutral valora su propia libertad por encima de todo. No quieren que los lazos con el bien o el mal los influyan, prefiriendo abrirse camino como mejor les parezca. A la mayoría de los personajes caóticos neutrales no les importa nada las personas en sus grupos, no tienen o tienen pocas lealtades, solo les importa ellos mismos.",
+			descriptors = "",
+			examples = { "Ragnaros el Señor del Fuego", "Grommash Grito Infernal", "Illidan Tempestira", },
+		},
+		{
+			name = "Caótico Malvado",
+			desc = "Con el impulso del odio puro, el personaje caótico malvado hará todo lo posible para alcanzar sus objetivos. No están sujetos a ninguna ley, ningún amo y ninguna compasión. Aunque es poco probable que persigan por la calle matar a inocentes (caótico malvado no significa estúpido), este personaje no tendría remordimientos al hacerlo.",
+			descriptors = "",
+			examples = { "La Plaga de No-muertos", "La Legión Ardiente", "Alamuerte el Destructor", },
 		},
 	},
 }
