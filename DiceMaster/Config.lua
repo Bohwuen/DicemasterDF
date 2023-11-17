@@ -398,6 +398,24 @@ Me.configOptions = {
 			width = "double";
 			set = function( info, val )
 				Me.db.global.enableD10 = val
+
+					-- 	local editBox = FindEditBox(DiceMasterPanel)
+					-- 		if editBox then
+					-- 		print("EditBox found")
+					-- -- Obtener la referencia al cuadro de edición
+
+					-- 	if val then
+					-- 		--Si el modo D10 está habilitado, establecer el texto en "1D10+0"
+					-- 		editBox:SetText("1D10+0")
+					-- 	else
+					-- 		--Si el modo D10 está deshabilitado, establecer el texto en "1D20+0"
+					-- 		editBox:SetText("1D20+0")
+					-- 	end
+					-- else
+					-- 	print("EditBox not found")
+					-- end
+				
+
 			end;
 			get = function( info ) return Me.db.global.enableD10 end;
 		};

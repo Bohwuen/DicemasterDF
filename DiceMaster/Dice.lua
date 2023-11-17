@@ -137,7 +137,7 @@ local function ColoredRoll( roll, min, max )
 		max = min 
 		min = 1 
 	end
-	if min == 1 and max < 10 then 
+	if min == 1 and max < 2 then 
 		return roll, ""
 	end -- for less than 10 sides, don't treat it special
 	if roll == min then 

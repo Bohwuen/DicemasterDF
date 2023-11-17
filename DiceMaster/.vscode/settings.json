@@ -153,6 +153,9 @@
         "StackSplitFrame",
         "UIDropDownMenu_SetAnchor",
         "NineSliceUtil",
-        "GAME_TOOLTIP_BACKDROP_STYLE_CORRUPTED_ITEM"
+        "GAME_TOOLTIP_BACKDROP_STYLE_CORRUPTED_ITEM",
+        "CreateFrame",
+        "BackdropTemplateMixin",
+        "UnitName"
     ]
 }

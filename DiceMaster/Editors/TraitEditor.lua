@@ -3121,7 +3121,7 @@ function Me.TraitEditor_Open()
 	
 	Me.editor.PortraitContainer.portrait:SetTexture( "Interface/AddOns/DiceMaster/Texture/TraitFrameIcon" )
 	
-	Me.editor.TitleContainer.TitleText:SetText( "Traits" )
+	Me.editor.TitleContainer.TitleText:SetText( "Rasgos" )
 	
 	Me.editor.CloseButton:SetScript("OnClick",Me.TraitEditor_OnCloseClicked)
    

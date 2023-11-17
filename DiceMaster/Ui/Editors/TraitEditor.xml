@@ -120,10 +120,10 @@
 							GameTooltip:AddLine( self.expandedDescription, 1, 0.81, 0, true )
 						else
 							GameTooltip:AddLine( self.skillDescription, 1, 0.81, 0, true )
-							GameTooltip:AddLine( "&lt;Hold Shift for Details>", 0.5, 0.5, 0.5, true )
+							GameTooltip:AddLine( "&lt;Mantener Shift para detalles>", 0.5, 0.5, 0.5, true )
 						end
-						GameTooltip:AddLine( "&lt;Left Click to Select>", 0.5, 0.5, 0.5, true )
-						GameTooltip:AddLine( "&lt;Drag to Reorder>", 0.5, 0.5, 0.5, true )
+						GameTooltip:AddLine( "&lt;Click para seleccionar>", 0.5, 0.5, 0.5, true )
+						GameTooltip:AddLine( "&lt;Arrastrar para reordenar>", 0.5, 0.5, 0.5, true )
 						DiceMasterTooltipIcon.icon:SetTexture( self.skillIcon )
 						DiceMasterTooltipIcon:Show()
 						GameTooltip:Show()
@@ -161,12 +161,12 @@
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 						if self.visible then
 							GameTooltip:AddLine( "Visible", 1, 1, 1 )
-							GameTooltip:AddLine( "This skill will appear on the dice menu.", 1, 0.81, 0 )
+							GameTooltip:AddLine( "Esta habilidad aparecerá en el menú de dados.", 1, 0.81, 0 )
 						else
-							GameTooltip:AddLine( "Hidden", 1, 1, 1 )
-							GameTooltip:AddLine( "This skill will not appear on the dice menu.", 1, 0.81, 0 )
+							GameTooltip:AddLine( "Oculto", 1, 1, 1 )
+							GameTooltip:AddLine( "Esta habilidad no aparecerá en el menú de dados.", 1, 0.81, 0 )
 						end
-						GameTooltip:AddLine( "&lt;Left Click to Toggle>", 0.5, 0.5, 0.5, true )
+						GameTooltip:AddLine( "&lt;Click para cambiar.>", 0.5, 0.5, 0.5, true )
 						GameTooltip:Show()
 					</OnEnter>
 					<OnClick>
@@ -195,9 +195,9 @@
 						local modifiers = DiceMaster4.GetModifiersFromSkillGUID( skill.guid, true )
 						dice = DiceMaster4.FormatDiceString( dice, modifiers ) or "D20";
 						GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-						GameTooltip:AddLine( "Roll", 1, 1, 1 )
-						GameTooltip:AddLine( "Make a " .. dice .. " " .. skill.name .. " roll.", 1, 0.81, 0 )
-						GameTooltip:AddLine( "&lt;Left Click to Roll>", 0.5, 0.5, 0.5, true )
+						GameTooltip:AddLine( "Tira", 1, 1, 1 )
+						GameTooltip:AddLine( "Haz una tirada de " .. dice .. " " .. skill.name .. ".", 1, 0.81, 0 )
+						GameTooltip:AddLine( "&lt;Click para tirar>", 0.5, 0.5, 0.5, true )
 						GameTooltip:Show()
 					</OnEnter>
 					<OnLeave>
@@ -848,7 +848,7 @@
 					<Scripts>
 					  <OnLoad>
 						
-						self:SetCustomTooltip( "|cFFFFD100Click to select an icon for this trait." )
+						self:SetCustomTooltip( "|cFFFFD100Click para seleccionar un icono para este rasgo." )
 						
 					  </OnLoad>
 					  <OnClick>
@@ -868,7 +868,7 @@
 					  <OnLoad>
 						self:SetAutoFocus( false )
 						self:SetTextColor( 1, 1, 1 )
-						self:SetMaxLetters( 40 )
+						self:SetMaxLetters( 80 )
 					  </OnLoad>
 					  <OnEditFocusLost>
 						DiceMaster4.TraitEditor_SaveName()
@@ -1915,7 +1915,7 @@
 								</Anchors>
 								<Scripts>
 									<OnLoad>
-										self:SetCustomTooltip( "|cFFFFD100Click to select an icon for this skill." )
+										self:SetCustomTooltip( "|cFFFFD100Click para seleccionar un icono para esta habilidad." )
 									</OnLoad>
 									<OnClick>
 										PlaySound(54132)
@@ -2010,9 +2010,9 @@
 											</OnMouseDown>
 											<OnEnter>
 												GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-												GameTooltip:SetText( "Increase " .. self.skillName );
+												GameTooltip:SetText( "Incrementar " .. self.skillName );
 												if self.canIncreaseMax then
-													GameTooltip:AddLine( "&lt;Hold Shift to Increase Max>", 0.5, 0.5, 0.5, true );
+													GameTooltip:AddLine( "&lt;Mantener Shift para incrementar el Máximo>", 0.5, 0.5, 0.5, true );
 												end
 												GameTooltip:Show();
 											</OnEnter>
@@ -2059,9 +2059,9 @@
 											</OnMouseDown>
 											<OnEnter>
 												GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-												GameTooltip:SetText( "Decrease " .. self.skillName );
+												GameTooltip:SetText( "Disminuir " .. self.skillName );
 												if self.canDecreaseMax then
-													GameTooltip:AddLine( "&lt;Hold Shift to Decrease Max>", 0.5, 0.5, 0.5, true );
+													GameTooltip:AddLine( "&lt;Mantener Shift para disminuir el Máximo>", 0.5, 0.5, 0.5, true );
 												end
 												GameTooltip:Show();
 											</OnEnter>
@@ -2099,7 +2099,7 @@
 											</OnClick>
 											<OnEnter>
 												GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-												GameTooltip:SetText( "Unlearn " .. self.skillName );
+												GameTooltip:SetText( "Olvidar " .. self.skillName );
 												GameTooltip:Show();
 											</OnEnter>
 											<OnLeave>

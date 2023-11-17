@@ -225,9 +225,9 @@ function Me.SecretEditorCondition_OnLoad(frame, level, menuList)
 			if i <= 10 then
 				info.hasArrow = true;
 				if i <= 9 then
-					info.menuList = "Skills";
+					info.menuList = "Habilidades";
 				elseif i == 10 then
-					info.menuList = "Traits";
+					info.menuList = "Rasgos";
 				end
 			else
 				info.isNotRadio = true;
@@ -245,7 +245,7 @@ function Me.SecretEditorCondition_OnLoad(frame, level, menuList)
 			end
 			UIDropDownMenu_AddButton(info, level)
 		end
-	elseif menuList == "Skills" then
+	elseif menuList == "Habilidades" then
 		for k,v in pairs( skillsList ) do
 			info.text = k
 			info.menuList = k
@@ -254,7 +254,7 @@ function Me.SecretEditorCondition_OnLoad(frame, level, menuList)
 			info.hasArrow = true;
 			UIDropDownMenu_AddButton(info, level)
 		end
-	elseif menuList == "Traits" then
+	elseif menuList == "Rasgos" then
 		for i = 1,#Profile.traits do
 			info.text = Profile.traits[i].name
 			info.isNotRadio = true;

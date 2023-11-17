@@ -92,7 +92,7 @@
       <Layer level="BACKGROUND">
       
         <!-- Panel texture -->
-        <Texture parentKey="background" file="Interface/AddOns/DiceMaster/Texture/roll-frame" hidden="true">
+        <Texture parentKey="background" file="Interface/AddOns/DiceMaster/Texture/roll-frame" hidden="false">
           <Size x="192" y="48" />
           <Anchors>
             <Anchor point="CENTER" x="-80" y="0"/>
@@ -167,7 +167,7 @@
     <Frames>
     
       <!-- Dice format editbox. -->
-      <EditBox name="$parentDice" parentKey="dice" font="DiceMasterFontExtraThicc" hidden="true">
+      <EditBox name="$parentDice" parentKey="dice" font="DiceMasterFontExtraThicc" hidden="false">
       
         <Size x="80" y="14" />
         <Anchors>
@@ -305,7 +305,7 @@
 			</OnUpdate>
 		</Scripts>
 		<Frames>
-			<Frame parentKey="petModelShadow" inherits="ShadowOverlayTemplate" hidden="true">
+			<Frame parentKey="petModelShadow" inherits="ShadowOverlayTemplate" hidden="false">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="DiceMasterTraitEditorInset" x="2" y="-2"/>
 					<Anchor point="BOTTOMRIGHT" relativeTo="DiceMasterTraitEditorInset" x="0" y="0"/>
@@ -359,7 +359,7 @@
 				if not( DiceMasterTraitEditor:IsShown() ) then
 					DiceMaster4.TraitEditor_Open()
 				else
-					DiceMaster4.TraitEditor_OnCloseClicked() 
+					DiceMaster4.TraitEditor_OnCloseClicked()	
 				end
 			</OnClick>
 			<OnEnter>
